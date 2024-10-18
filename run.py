@@ -16,8 +16,15 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("vegetable_farm")
 
 
-trades = SHEET.worksheet("trades")
+def get_trade_data():
+    """
+    Get trade figures input from app users
+    """
+    print("Please type in trade data for last open market")
+    print("Thirteen numbers separated by commas is expected")
+    print("For Example: 1343,1564,2675,3456,1985,6352,1853,5411,3452,1762,3286,1623,1527\n")
 
-data = trades.get_all_values()
+    data_str = input("Record data here: ")
+    print(f"The data recorded is {data_str}")
 
-print(data)
+get_trade_data()
