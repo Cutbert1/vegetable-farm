@@ -36,12 +36,13 @@ def verify_data(values):
     Raise ValueError  if integers are not 13 values exactly.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 13:
             raise ValueError(
                 f"13 values required but you entered {len(values)}"
             )
     except ValueError as e:
-        print(f"unacceptable data: {e}, try again please.\n")
+        print(f"Invalid data: {e}, try again please.\n")
 
 
 get_trade_data()
