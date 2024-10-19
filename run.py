@@ -25,6 +25,23 @@ def get_trade_data():
     print("For Example: 1343,1564,2675,3456,1985,6352,1853,5411,3452,1762,3286,1623,1527\n")
 
     data_str = input("Record data here: ")
-    print(f"The data recorded is {data_str}")
+    
+    trade_data = data_str.split(",")
+    verify_data(trade_data)
+
+def verify_data(values):
+    """
+    All string values converted to integers inside the try. 
+    If string values can't be converted to integer raise  ValueError.
+    Raise ValueError  if integers are not 13 values exactly.
+    """
+    try:
+        if len(values) != 13:
+            raise ValueError(
+                f"13 values required but you entered {len(values)}"
+            )
+    except ValueError as e:
+        print(f"unacceptable data: {e}, try again please.\n")
+
 
 get_trade_data()
