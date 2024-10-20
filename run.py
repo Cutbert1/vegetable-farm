@@ -18,7 +18,9 @@ SHEET = GSPREAD_CLIENT.open("vegetable_farm")
 
 def get_trade_data():
     """
-    Get trade figures input from app users
+    Get trade figures input from app users.
+    while loop repeatedly run for valid strings, 
+    which must contain 13 numbers, separated with commas.
     """
     while True:
 
@@ -56,4 +58,17 @@ def verify_data(values):
 
     return True
 
+def update_trade_worksheet(data):
+    """
+    Access trade work sheet and add new row anytime new valid list data is entered
+    """
+    print("Trade worksheet is being updated......\n")
+    trade_worksheet = SHEET.worksheet("trade")
+    trade_worksheet.append_row(data)
+    print("Trade worksheet successfully updated.\n")
+
+
+
 data = get_trade_data()
+trade_data = [int(num) for num in data]
+update_trade_worksheet(trade_data)
