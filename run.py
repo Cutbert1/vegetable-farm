@@ -20,14 +20,22 @@ def get_trade_data():
     """
     Get trade figures input from app users
     """
-    print("Please type in trade data for last open market")
-    print("Thirteen numbers separated by commas is expected")
-    print("For Example: 1343,1564,2675,3456,1985,6352,1853,5411,3452,1762,3286,1623,1527\n")
+    while True:
 
-    data_str = input("Record data here: ")
+        print("Please type in trade data for last open market")
+        print("Thirteen numbers separated by commas is expected")
+        print("For Example: 1343,1564,2675,3456,1985,6352,1853,5411,3452,1762,3286,1623,1527\n")
+
+        data_str = input("Record data here: ")
     
-    trade_data = data_str.split(",")
-    verify_data(trade_data)
+        trade_data = data_str.split(",")
+        
+
+        if verify_data(trade_data):
+            print("Data is valid")
+            break
+
+    return trade_data
 
 def verify_data(values):
     """
@@ -43,6 +51,9 @@ def verify_data(values):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, try again please.\n")
+        return False
 
 
-get_trade_data()
+    return True
+
+data = get_trade_data()
