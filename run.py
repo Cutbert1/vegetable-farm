@@ -72,10 +72,16 @@ def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
     """
-    print("Evaluating excess data..../n")
+    print("Evaluating excess data....\n")
     harvest = SHEET.worksheet("harvest").get_all_values()
     harvest_row = harvest[-1]
-    print(harvest_row)
+
+    excess_data = []
+    for harvest, trade in zip(harvest_row, trade_row):
+        excess = int(harvest) - trade
+        excess_data.append(excess)
+    
+    return excess_data
 
 
 def main():
@@ -85,7 +91,8 @@ def main():
     data = get_trade_data()
     trade_data = [int(num) for num in data]
     update_trade_worksheet(trade_data)
-    calculate_excess_data(trade_data)
+    new_excess_data = calculate_excess_data(trade_data)
+    print(new_excess_data)
 
 print("Welcome to Vegetable Farm Data Automation")
 main()
