@@ -68,6 +68,15 @@ def update_trade_worksheet(data):
     trade_worksheet.append_row(data)
     print("Trade worksheet successfully updated.\n")
 
+def update_excess_worksheet(data):
+    """
+    Access excess work sheet and add new row anytime new valid list data is entered and calculated
+    """
+    print("Trade worksheet is being updated......\n")
+    excess_worksheet = SHEET.worksheet("excess")
+    excess_worksheet.append_row(data)
+    print("Excess worksheet successfully updated.\n")
+
 def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
@@ -92,7 +101,7 @@ def main():
     trade_data = [int(num) for num in data]
     update_trade_worksheet(trade_data)
     new_excess_data = calculate_excess_data(trade_data)
-    print(new_excess_data)
+    update_excess_worksheet(new_excess_data)
 
 print("Welcome to Vegetable Farm Data Automation")
 main()
