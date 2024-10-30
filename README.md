@@ -1,3 +1,67 @@
+
+# Vegetable Farm
+## Introduction
+#### Project Description
+  Vegetable Farm is a statistical collection project to enable a vegetable farmer collect details of daily sales of 13 different vegetables being cultivated on his farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, pasnip and onion) types. To understand and forecast daily vegetable harvest with reference to daily sales and excess. Excess is references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelve life. 
+
+  Here is a live version of my project
+
+#### How to Use
+#### User Demographic
+## Design
+Lucid Chat to demonstrate development flow
+## Features
+### Existing Features
+* #### Error handling:
+
+Input must be integers
+
+Input must be 13 digits separated with commas
+
+* Trade worksheet is updated when valid record is entered
+
+* Excess is calculated and worksheet updated
+
+* Harvest and forecast is calculated and worksheet updated
+
+## Manual Testing
+### Features Testing
+### Lighthouse Performance
+### Validation Testing
+## Technologies Used
+### Languages Used
+## Bugs
+#### Bugs Resolved
+#### Bugs Unresolved
+### Libraries
+## Deployment
+## Credits
+### Codes
+### Tutorials
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
