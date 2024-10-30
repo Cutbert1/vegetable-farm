@@ -101,6 +101,21 @@ def calculate_excess_data(trade_row):
     
     return excess_data
 
+def get_last_week_trade():
+    """
+    Assembles columns of data in trade worksheet,
+    pulling last 7 entries (one week) for each vegetable 
+    then return the data as a list of lists.
+    """
+    trade = SHEET.worksheet("trade")
+
+    columns = []
+    for ind in range(1, 14):
+        column = trade.col_values(ind)
+        columns.append(column[-7:])
+    
+    return columns
+
 
 def main():
     """
@@ -113,4 +128,5 @@ def main():
     update_worksheet(new_excess_data, "excess")
 
 print("Welcome to Vegetable Farm Data Automation")
-main()
+#main()
+trade_columns = get_last_week_trade()
