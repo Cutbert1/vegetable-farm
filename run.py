@@ -35,7 +35,7 @@ def get_trade_data():
         
 
         if verify_data(trade_data):
-            print("Data is valid")
+            print("Data is valid...\n")
             break
 
     return trade_data
@@ -63,7 +63,7 @@ def verify_data(values):
     """
     Access trade work sheet and add new row anytime new valid list data is entered
     """
-    print("Trade worksheet is being updated......\n")
+    print("Trade worksheet is being updated.....\n")
     trade_worksheet = SHEET.worksheet("trade")
     trade_worksheet.append_row(data)
     print("Trade worksheet successfully updated.\n")
@@ -81,10 +81,10 @@ def update_worksheet(data, worksheet):
     """
     Receives and update relevant worksheet with data provided
     """
-    print(f"Updating {worksheet} workseet...\n")
+    print(f"{worksheet} worksheet is being updated...\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
-    print(f"{worksheet} worksheet successfully updated.\n")
+    print(f"{worksheet} Worksheet successfully updated.\n")
 
 def calculate_excess_data(trade_row):
     """
@@ -105,7 +105,7 @@ def get_last_week_trade():
     """
     Assembles columns of data in trade worksheet,
     pulling last 7 entries (one week) for each vegetable 
-    then return the data as a list of lists.
+    then return columns data.
     """
     trade = SHEET.worksheet("trade")
 
@@ -115,6 +115,21 @@ def get_last_week_trade():
         columns.append(column[-7:])
     
     return columns
+
+def calculate_harvest_data(data):
+    """
+    Evaluate average harvest for each vegetable type, with addition of 20%
+    """
+    print("Evaluating harvest data....\n")
+    new_harvest_data = []
+
+    for column in data:
+        column_int = [int(num) for num in column]
+        average = sum(column_int) / 7
+        harvest_num = average * 2.2
+        new_harvest_data.append(round(harvest_num))
+
+    return new_harvest_data
 
 
 def main():
@@ -126,7 +141,9 @@ def main():
     update_worksheet(trade_data, "trade")
     new_excess_data = calculate_excess_data(trade_data)
     update_worksheet(new_excess_data, "excess")
+    trade_columns = get_last_week_trade()
+    harvest_data = calculate_harvest_data(trade_columns)
+    update_worksheet(harvest_data, "harvest")
 
 print("Welcome to Vegetable Farm Data Automation")
-#main()
-trade_columns = get_last_week_trade()
+main()
