@@ -26,7 +26,7 @@ def get_trade_data():
         print("Thirteen numbers separated by commas is expected")
         print("For Example: 134,156,27,345,198,63,183,51,342,172,386,12,127\n")
 
-        data_str = input("Record data here: ")
+        data_str = input("Record data here:\n")
 
         trade_data = data_str.split(",")
 
