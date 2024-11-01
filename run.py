@@ -23,7 +23,7 @@ def get_trade_data():
     while True:
 
         print("Please type in trade data for last open market")
-        print("Thirteen numbers separated by commas is expected")
+        print("Thirteen collection of numbers separated by commas is expected")
         print("For Example: 134,156,27,345,198,63,183,51,342,172,386,12,127\n")
 
         data_str = input("Record data here:\n")
@@ -127,7 +127,27 @@ def main():
     trade_columns = get_last_week_trade()
     harvest_data = calculate_harvest_data(trade_columns)
     update_worksheet(harvest_data, "harvest")
+    return harvest_data
 
 
 print("Welcome to Vegetable Farm Data Automation")
-main()
+harvest_data = main()
+
+
+def get_harvest_values(data):
+    """
+    Evaluated harvest forecast numbers for each vegetable and print to terminal
+    """
+    headings = SHEET.worksheet('harvest').row_values(1)
+    print("Forecast vegetable harvest numbers for next day\n")
+
+    forcast_data = {}
+    for heading, harvest_num in zip(headings, data):
+        forcast_data[heading] = harvest_num
+    return forcast_data
+
+    return {heading: data for heading, data in zip(headings, data)}
+
+
+harvest_values = get_harvest_values(harvest_data)
+print(harvest_values)
