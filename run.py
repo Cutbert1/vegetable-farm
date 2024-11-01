@@ -55,26 +55,6 @@ def verify_data(values):
 
     return True
 
-# def update_trade_worksheet(data):
-    """
-    Access trade work sheet and add new row anytime new
-    valid data list is entered
-    """
-    print("Trade worksheet is being updated\n")
-    trade_worksheet = SHEET.worksheet("trade")
-    trade_worksheet.append_row(data)
-    print("Trade worksheet successfully updated.\n")
-
-# def update_excess_worksheet(data):
-    """
-    Access excess work sheet and add new row anytime new
-    valid data list is entered and calculated
-    """
-    print("Trade worksheet is being updated\n")
-    excess_worksheet = SHEET.worksheet("excess")
-    excess_worksheet.append_row(data)
-    print("Excess worksheet successfully updated.\n")
-
 
 def update_worksheet(data, worksheet):
     """
