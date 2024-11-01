@@ -60,7 +60,7 @@ def verify_data(values):
     Access trade work sheet and add new row anytime new
     valid data list is entered
     """
-    print("Trade worksheet is being updated.....\n")
+    print("Trade worksheet is being updated\n")
     trade_worksheet = SHEET.worksheet("trade")
     trade_worksheet.append_row(data)
     print("Trade worksheet successfully updated.\n")
@@ -70,7 +70,7 @@ def verify_data(values):
     Access excess work sheet and add new row anytime new
     valid data list is entered and calculated
     """
-    print("Trade worksheet is being updated......\n")
+    print("Trade worksheet is being updated\n")
     excess_worksheet = SHEET.worksheet("excess")
     excess_worksheet.append_row(data)
     print("Excess worksheet successfully updated.\n")
@@ -80,17 +80,17 @@ def update_worksheet(data, worksheet):
     """
     Receives and update relevant worksheet with data provided
     """
-    print(f"{worksheet} worksheet is being updated...\n")
+    print(f"{worksheet} worksheet is being updated\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
-    print(f"{worksheet} Worksheet successfully updated.\n")
+    print(f"{worksheet} Worksheet successfully updated\n")
 
 
 def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
     """
-    print("Evaluating excess data....\n")
+    print("Evaluating excess data\n")
     harvest = SHEET.worksheet("harvest").get_all_values()
     harvest_row = harvest[-1]
 
@@ -123,7 +123,7 @@ def calculate_harvest_data(data):
     Evaluate average harvest for each vegetable type,
     with addition of 20% forecast
     """
-    print("Evaluating harvest forecast data....\n")
+    print("Evaluating harvest forecast data\n")
     new_harvest_data = []
 
     for column in data:
