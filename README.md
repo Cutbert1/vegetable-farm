@@ -2,7 +2,7 @@
 # Vegetable Farm
 ## Introduction
 #### Project Description
-  Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of 13 different vegetables being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, pasnip and onion) types. To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
+  Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of thirteen different vegetables types being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, pasnip and onion). To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold hence wasted as vegetables are highly perishable produce. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
 
   [Here is a live version of my project, Vegetable Farm](https://vegetable-farm-d2f6bd1576d7.herokuapp.com/)
 
@@ -33,19 +33,26 @@ Lucid Chart to demonstrate development flow
 ![lucid chart](./assets/readme-images/lucidchart.jpg)
 ## Features
 ### Existing Features
-* #### Error handling:
+#### Error handling:
 
-Input must be integers
+   * Input must be integers
 
-Input must be 13 values separated with commas
+   * Input must be 13 values separated with commas
 
-* Trade worksheet is updated when valid record is entered
+* Trade worksheet updated when valid record is entered
 
-* Excess is calculated and worksheet updated
+* Excess calculated and worksheet updated
 
-* Harvest and forecast is calculated and worksheet updated
+* Harvest forecast calculated and worksheet updated
+
+* Next day harvest forecast printed to terminal
 
 ### Future Features
+
+* Convert vegetable to be weighed in tonnes  
+
+* Forecast harvest numbers for a longer period
+
 ## Validation Testing
 Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
 
@@ -77,6 +84,10 @@ It was fixed by using range (1, 14)
 There are no unresolved bug
 ## Deployment
 ### Deployment Steps
+
+* To enable Heroku build the project, create dependency list on requirement.txt file in workspace using pip3 freeze > requirements.txt command
+
+   ![requirements](./assets/readme-images/requirements.jpg)
 
 * Sign into Heroku and create a new app.
 
