@@ -11,9 +11,10 @@
 Vegetable farm data automation can be used by small to medium size vegetable farmers 
 #### How to Use
 Vegetable farm data automation is based on gathering statistical data used to improve farmers harvest forecast for longer vegetable shelf life.
+
 Step 1. Run the program
 
-Step 2. Enter trade data, 13 values(integers) separated with commas
+Step 2. Enter trade data, 13 collection of values(integers) separated with commas
 
 Step 3. Hit enter to run the program
 
@@ -22,6 +23,8 @@ Step 4. Trade worksheet auto Update
 Step 5. Excess worksheet auto Update
 
 Step 6. Harvest worksheet auto Update
+
+Step 7. Print harvest forcast on terminal for next day
 
 
 ## Design
@@ -44,9 +47,9 @@ Input must be 13 values separated with commas
 
 ### Future Features
 ## Validation Testing
-Manually tested this project by passing the code through a [PEP8 linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
+Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
 
-![PEP8 manual test](./assets/readme-images/Manual-test.jpg)
+![PEP8 manual test](./assets/readme-images/manual-test.jpg)
 
 ### Features Testing
  Tested on my local terminal and code institute Heroku terminal after deployment
@@ -73,6 +76,40 @@ It was fixed by using range (1, 14)
 #### Bugs Unresolved
 There are no unresolved bug
 ## Deployment
+### Deployment Steps
+
+* Sign into Heroku and create a new app.
+
+    ![create new app](./assets/readme-images/create%20app.png)
+
+* Add App name (vegetable-farm) and choose region (Europe)
+  
+* Go to settings tab to add Config Var
+
+   ![settings](./assets/readme-images/settings.png)
+      
+* Add credential json KEY and VALUE
+
+   ![credential](./assets/readme-images/configvars.jpg)
+
+* Add another config Var to set KEY as PORT and VALUE as 8000
+
+   ![port](./assets/readme-images/port.jpg)
+
+* Go to Deploy tab to continue deployment
+
+   ![deploy](./assets/readme-images/deploy.png)
+
+* Link Heroku App to GitHub repository
+
+   ![link](./assets/readme-images/link.jpg)
+
+* Search for GitHub repository (vegetable-farm)
+
+* Click on deploy branch
+
+  ![deploy branch](./assets/readme-images/deploy%20branch.jpg)
+
 ## Credits
 ### Codes
 Code Institute [Love Sandwiches project](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/02-accessing-user-data/05-updating-our-sales-worksheet)
