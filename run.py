@@ -1,4 +1,3 @@
-
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -55,7 +54,7 @@ def verify_data(values):
 
     return True
 
-# Adapted from code institute love sandwiches project
+# Adapted from code institute love sandwiches tutorial
 
 
 def update_worksheet(data, worksheet):
@@ -143,10 +142,10 @@ def get_harvest_values(data):
     headings = SHEET.worksheet('harvest').row_values(1)
     print("Forecast vegetable harvest numbers for next day\n")
 
-    forcast_data = {}
+    forecast_data = {}
     for heading, harvest_num in zip(headings, data):
-        forcast_data[heading] = harvest_num
-    return forcast_data
+        forecast_data[heading] = harvest_num
+    return forecast_data
 
     return {heading: data for heading, data in zip(headings, data)}
 

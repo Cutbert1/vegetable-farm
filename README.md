@@ -2,7 +2,7 @@
 # Vegetable Farm
 ## Introduction
 #### Project Description
-  Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of thirteen different vegetables types being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, pasnip and onion). To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold hence wasted as vegetables are highly perishable produce. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
+  Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of thirteen different vegetables types being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, parsnip and onion). To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold hence wasted as vegetables are highly perishable produce. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
 
   [Live version of my project, Vegetable Farm is here](https://vegetable-farm-d2f6bd1576d7.herokuapp.com/)
 
@@ -49,10 +49,10 @@ Lucid Chart to demonstrate development flow
 
 ### Future Features
 
-* Forecast harvest numbers for a longer period using average trade, harvest 
-  and excess data for several weeks e.g. summer, Christmas etc.
+* Forecast harvest numbers for a longer period and seasons, e.g. summer, 
+  Christmas etc using average trade, harvest and excess data for several weeks.
 
-* Convert vegetable to be weighed in tonnes  
+* Convert vegetables to be weighed in tonnes  
 
 ## Validation Testing
 Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
@@ -63,7 +63,7 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
  Tested on my local terminal and code institute Heroku terminal after deployment
 |Key Features|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
-|Input must be integers|Ensure user enters integers with no alpha or alpahnumeric entries|Enter 13 trade data with alphanumberic emtries|Invalid data error message ![Integer](./assets/readme-images/Integer.jpg)|
+|Input must be integers|Ensure user enters integers with no alpha or alphanumeric entries|Enter 13 trade data with alphanumeric entries|Invalid data error message ![Integer](./assets/readme-images/Integer.jpg)|
 |Input must be 13 digits separated with commas|Ensure user enters the correct number of data to match variety of vegetable on the farm|Enter integers that are not equal to 13 entries|Invalid data error message ![values](./assets/readme-images/numbeofvalues.jpg)|
 |Trade worksheet updated when valid data is entered|Automatically update trade worksheet to with to match details entered for each vegetable|Enter valid data: 13 integers separated with commas|Valid data message printed on terminal and updates worksheet ![trade](./assets/readme-images/trade.jpg) ![trade worksheet](./assets/readme-images/tradews.jpg)|
 |Calculated excess and updated worksheet|Automatically calculate excess by subtracting trade from harvest and update worksheet |Enter valid data: 13 integers separated with commas|Excess progression tasks  printed on terminal and excess worksheet updated ![excess](./assets/readme-images/excess.jpg) ![excessws](./assets/readme-images/excessws.jpg)|
@@ -124,9 +124,9 @@ There are no unresolved bug
 
 ## Credits
 ### Codes
-Code Institute [Love Sandwiches project](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/02-accessing-user-data/05-updating-our-sales-worksheet)
+Code Institute [Love Sandwiches Tutorial](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/02-accessing-user-data/05-updating-our-sales-worksheet)
 ### Tutorials
-* Code Institute Python Essentails
+* Code Institute Python Essentials
 
 * [stackoverflow](https://stackoverflow.com/questions/23739224/empty-heading-warning-on-html5-validation)
 
