@@ -55,6 +55,8 @@ def verify_data(values):
 
     return True
 
+# Adapted from code institute love sandwiches project
+
 
 def update_worksheet(data, worksheet):
     """

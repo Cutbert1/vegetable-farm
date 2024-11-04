@@ -4,7 +4,7 @@
 #### Project Description
   Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of thirteen different vegetables types being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, pasnip and onion). To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold hence wasted as vegetables are highly perishable produce. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
 
-  [Here is a live version of my project, Vegetable Farm](https://vegetable-farm-d2f6bd1576d7.herokuapp.com/)
+  [Live version of my project, Vegetable Farm is here](https://vegetable-farm-d2f6bd1576d7.herokuapp.com/)
 
   ![deployed app](./assets/readme-images/deployed%20app.jpg)
 #### User Demographic
@@ -24,7 +24,7 @@ Step 5. Excess worksheet auto Update
 
 Step 6. Harvest worksheet auto Update
 
-Step 7. Print harvest forcast on terminal for next day
+Step 7. Print harvest forecast on terminal for next day
 
 
 ## Design
@@ -49,9 +49,10 @@ Lucid Chart to demonstrate development flow
 
 ### Future Features
 
-* Convert vegetable to be weighed in tonnes  
+* Forecast harvest numbers for a longer period using average trade, harvest 
+  and excess data for several weeks e.g. summer, Christmas etc.
 
-* Forecast harvest numbers for a longer period
+* Convert vegetable to be weighed in tonnes  
 
 ## Validation Testing
 Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
