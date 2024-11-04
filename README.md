@@ -54,6 +54,11 @@ Lucid Chart to demonstrate development flow
 
 * Convert vegetables to be weighed in tonnes  
 
+## Data Model
+The data type requirement are numeric integers. A collection of thirteen integers separated with commas, this classifies thirteen columns of farmer’s vegetables types as stated in google sheet. Trade input data __must__ be equals to thirteen collection of numeric integers separated with commas and __must__ not contain any other data type.
+
+Daily excess is calculated by subtracting trade from harvest. Harvest forecast calculated is calculated using average  trade for last week (7 days) and a markup of 20%.
+
 ## Validation Testing
 Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
 
