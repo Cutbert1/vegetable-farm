@@ -19,6 +19,8 @@ def get_trade_data():
     while loop repeatedly run for valid strings,
     which must contain 13 numbers, separated with commas.
     """
+    # Code to get trade data and run loop for input request and data validation
+
     while True:
 
         print("Please type in trade data for last open market")
@@ -42,6 +44,8 @@ def verify_data(values):
     If string values can't be converted to integer raise  ValueError.
     Raise ValueError  if integers are not 13 values exactly.
     """
+    # Code to raise error when conditions are not met
+
     try:
         [int(value) for value in values]
         if len(values) != 13:
@@ -61,6 +65,8 @@ def update_worksheet(data, worksheet):
     """
     Receives and update relevant worksheet with data provided
     """
+    # Code to update worksheets with relevant data
+
     print(f"{worksheet} worksheet is being updated\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
@@ -71,6 +77,8 @@ def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
     """
+    # Code to calculate excess = harvest - trade
+
     print("Evaluating excess data\n")
     harvest = SHEET.worksheet("harvest").get_all_values()
     harvest_row = harvest[-1]
@@ -89,6 +97,8 @@ def get_last_week_trade():
     pulling last 7 entries (one week) for each vegetable
     then return columns data.
     """
+    # Code to pull last 7 days trade form worksheet
+
     trade = SHEET.worksheet("trade")
 
     columns = []
@@ -104,6 +114,8 @@ def calculate_harvest_data(data):
     Evaluate average harvest for each vegetable type,
     with addition of 20% forecast
     """
+    # Code to calculate average of last 7 days harvest
+
     print("Evaluating harvest forecast data\n")
     new_harvest_data = []
 
@@ -139,6 +151,8 @@ def get_harvest_values(data):
     """
     Evaluated harvest forecast numbers for each vegetable and print to terminal
     """
+    # Code to pull harvest forecast from workshet and print to terminal
+
     headings = SHEET.worksheet('harvest').row_values(1)
     print("Forecast vegetable harvest numbers for next day\n")
 

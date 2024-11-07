@@ -14,7 +14,7 @@ Vegetable farm data automation is based on gathering statistical data used to im
 
 Step 1. Run the program
 
-Step 2. Enter trade data, 13 collection of values(integers) separated with commas
+Step 2. Enter trade data, collection of 13 numeric integers separated with commas
 
 Step 3. Hit enter to run the program
 
@@ -35,9 +35,9 @@ Lucid Chart to demonstrate development flow
 ### Existing Features
 #### Error handling:
 
-   * Input must be integers
+      * Input must be numeric integers
 
-   * Input must be 13 values separated with commas
+      * Input must be collection of 13 numeric integers separated with commas
 
 * Trade worksheet updated when valid record is entered
 
@@ -68,7 +68,7 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
  Tested on my local terminal and code institute Heroku terminal after deployment
 |Key Features|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
-|Input must be integers|Ensure user enters integers with no alpha or alphanumeric entries|Enter 13 trade data with alphanumeric entries|Invalid data error message ![Integer](./assets/readme-images/Integer.jpg)|
+|Input must be numeric integers|Ensure user enters integers with no alpha or alphanumeric entries|Enter 13 trade data with alphanumeric entries|Invalid data error message ![Integer](./assets/readme-images/Integer.jpg)|
 |Input must be 13 digits separated with commas|Ensure user enters the correct number of data to match variety of vegetable on the farm|Enter integers that are not equal to 13 entries|Invalid data error message ![values](./assets/readme-images/numbeofvalues.jpg)|
 |Trade worksheet updated when valid data is entered|Automatically update trade worksheet to with to match details entered for each vegetable|Enter valid data: 13 integers separated with commas|Valid data message printed on terminal and updates worksheet ![trade](./assets/readme-images/trade.jpg) ![trade worksheet](./assets/readme-images/tradews.jpg)|
 |Calculated excess and updated worksheet|Automatically calculate excess by subtracting trade from harvest and update worksheet |Enter valid data: 13 integers separated with commas|Excess progression tasks  printed on terminal and excess worksheet updated ![excess](./assets/readme-images/excess.jpg) ![excessws](./assets/readme-images/excessws.jpg)|
