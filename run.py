@@ -19,7 +19,7 @@ def get_trade_data():
     while loop repeatedly run for valid strings,
     which must contain 13 numbers, separated with commas.
     """
-    # Code to get trade data and run loop for input request and data validation
+    # Code to input trade data and run loop for input request and data validation
 
     while True:
 
