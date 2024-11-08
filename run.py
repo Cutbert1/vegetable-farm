@@ -65,7 +65,7 @@ def update_worksheet(data, worksheet):
     """
     Receives and update relevant worksheet with data provided
     """
-    # Code to update worksheets with relevant data
+     # Code to update worksheets with relevant data
 
     print(f"{worksheet} worksheet is being updated\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
@@ -77,7 +77,7 @@ def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
     """
-    # Code to calculate excess = harvest - trade
+     # Code to calculate excess = harvest - trade
 
     print("Evaluating excess data\n")
     harvest = SHEET.worksheet("harvest").get_all_values()
@@ -151,10 +151,10 @@ def get_harvest_values(data):
     """
     Evaluated harvest forecast numbers for each vegetable and print to terminal
     """
-    # Code to pull harvest forecast from workshet and print to terminal
+    # Code to pull harvest forecast from worksheet and print to terminal
 
     headings = SHEET.worksheet('harvest').row_values(1)
-    print("Forecast vegetable harvest numbers for next day\n")
+    print("Vegetable harvest numbers for next day\n")
 
     forecast_data = {}
     for heading, harvest_num in zip(headings, data):

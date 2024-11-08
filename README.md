@@ -12,7 +12,7 @@ Vegetable farm data automation can be used by small to medium size vegetable far
 #### How to Use
 Vegetable farm data automation is based on gathering statistical data used to improve farmers harvest forecast for longer vegetable shelf life.
 
-Step 1. Run the program
+Step 1. Run the program (python3 run.py)
 
 Step 2. Enter trade data, collection of 13 numeric integers separated with commas
 
@@ -55,9 +55,10 @@ Lucid Chart to demonstrate development flow
 * Convert vegetables to be weighed in tonnes  
 
 ## Data Model
-The data type requirement are numeric integers. A collection of thirteen integers separated with commas, this classifies thirteen columns of farmer’s vegetables types as stated in google sheet. Trade input data __must__ be equals to thirteen collection of numeric integers separated with commas and __must__ not contain any other data type.
+Google sheet containing three worksheets (trade, excess and harvest)  was used with thirteen columns. The trade and excess worksheet contains nine rows of data while the harvest worksheet contains ten rows of data.
+Excess worksheet represents the subtraction of trade data from harvest data which is achieved by using the function calculate_excess_data parsing trade_row. 
+Harvest forecast is the average  trade for last week (7 days) and a markup of 20%.
 
-Daily excess is calculated by subtracting trade from harvest. Harvest forecast calculated is calculated using average  trade for last week (7 days) and a markup of 20%.
 
 ## Validation Testing
 Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
@@ -79,7 +80,8 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
 
 [Heroku](https://id.heroku.com/login)
 
-[Lucid Chart](https://www.lucidchart.com/)
+[Google Sheet](https://docs.google.com/spreadsheets)
+
 ### Languages Used
 [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 ## Bugs
@@ -92,9 +94,11 @@ There are no unresolved bug
 ## Deployment
 ### Deployment Steps
 
-* To enable Heroku build the project, create dependency list on requirement.txt file in workspace using pip3 freeze > requirements.txt command
+* To enable project to build, create dependency list on requirement.txt file in workspace using pip3 freeze > requirements.txt command
 
    ![requirements](./assets/readme-images/requirements.jpg)
+
+* Fork or clone vegetable-farm repository
 
 * Sign into Heroku and create a new app.
 
