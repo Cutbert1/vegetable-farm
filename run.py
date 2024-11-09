@@ -19,7 +19,8 @@ def get_trade_data():
     while loop repeatedly run for valid strings,
     which must contain 13 numbers, separated with commas.
     """
-    # Code to input trade data and run loop for input request and data validation
+    # Code to input trade data and run loop for input
+    # request and data validation
 
     while True:
 
@@ -65,7 +66,7 @@ def update_worksheet(data, worksheet):
     """
     Receives and update relevant worksheet with data provided
     """
-     # Code to update worksheets with relevant data
+    # Code to update worksheets with relevant data
 
     print(f"{worksheet} worksheet is being updated\n")
     worksheet_to_update = SHEET.worksheet(worksheet)
@@ -77,7 +78,7 @@ def calculate_excess_data(trade_row):
     """
     Evaluate trade with harvest, then determine excess for each item
     """
-     # Code to calculate excess = harvest - trade
+    # Code to calculate excess = harvest - trade
 
     print("Evaluating excess data\n")
     harvest = SHEET.worksheet("harvest").get_all_values()
