@@ -11,7 +11,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("vegetable_farm_sales")
+SPREADSHEET = GSPREAD_CLIENT.open("vegetable_farm_sales")
 
 VEGETABLES = {
     "1": {"name": "Cabbage", "price": 1.25},
@@ -61,16 +61,44 @@ def execute_vegetable_sales():
                     print("Insufficient payment. Please insert more money.")
                     total_due -= user_payment
             except ValueError:
-                print("Invalid payment amount. Please enter a valid number.")
+                print("Invalid payment amount. Please enter a valid amount.")
     else:
         print("Invalid selection. Please try again.")
     
     return chosen_vegetable, total_due
+
+
+def updateworksheet_sales(item: "vegetable", total_due: float):
+    """
+    Update worksheet for each purchase for back office inventory
+    Parameters:
+        - item: str
+            The name of the item purchased.
+        - total_due: float
+            The value of the purchase.
+ 
+        Raises:
+        - Exception:
+            If there is an issue updating the sales worksheet.
+    """
+    print("Sales worksheet is being updated\n")
+    try:
+        worksheet = SPREADSHEET.worksheet("sales")
+        next_row = len(worksheet.get_all_values()) + 1
+
+        worksheet.update_cell(next_row, 1, item["name"])
+        worksheet.update_cell(next_row, 2, total_due)
+
+    except Exception as e:
+        raise Exception(f"An error occurred while updating the sheet: {e}")
+    print("Sales Worksheet successfully updated\n")
+
 
 def main():
     """
     Run program functions
     """
     vegetable, total_due = execute_vegetable_sales()
+    updateworksheet_sales(vegetable, total_due)
 
 main()
