@@ -74,7 +74,7 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
     Parameters:
         - item: str
             The name of the item purchased.
-        - total_due: float
+        - total_due: float or integer
             The value of the purchase.
  
         Raises:
@@ -94,11 +94,27 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
     print("Sales Worksheet successfully updated\n")
 
 
+def calculate_daily_sales():
+    """
+    Back office to calculate daily sales at the end of each market day.
+    Pull list of string from sales worksheet
+    """
+    worksheet = SPREADSHEET.worksheet("sales")
+    colvalues = worksheet.col_values(2)  
+    all_col_values_except_first = colvalues[1:]  
+ 
+    print(all_col_values_except_first)  
+ 
+    return all_col_values_except_first
+
+
+
 def main():
     """
     Run program functions
     """
     vegetable, total_due = execute_vegetable_sales()
     updateworksheet_sales(vegetable, total_due)
+    calculate_daily_sales()
 
 main()
