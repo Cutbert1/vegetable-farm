@@ -39,33 +39,41 @@ def execute_vegetable_sales():
  
     for key, vegetable in VEGETABLES.items():
         print(f"{key}. {vegetable['name']} - ${vegetable['price']}")
-    
+ 
     # Prompt user input
-    user_selection = input("Enter the item number you wish to purchase: ")
-    
-    # Confirm availability of selected item
-    if user_selection in VEGETABLES:
-        chosen_vegetable = VEGETABLES[user_selection]
-        print(f"You have selected {chosen_vegetable['name']}.")
-        total_due = chosen_vegetable['price']
-        
-        # Prompt user payment
-        while total_due > 0:
-            try:
-                user_payment = float(input(f"Please insert ${total_due:.2f} or pay with card: "))
-                if user_payment >= total_due:
-                    change_returned = user_payment - total_due
-                    print(f"Thank you for your purchase! Your change is ${change_returned:.2f}.")
-                    break
-                else:
-                    print("Insufficient payment. Please insert more money.")
-                    total_due -= user_payment
-            except ValueError:
-                print("Invalid payment amount. Please enter a valid amount.")
-    else:
-        print("Invalid selection. Please try again.")
-    
-    return chosen_vegetable, total_due
+    while True:
+        user_selection = input("Enter the item number you wish to purchase (or type 'exit' to end): ")
+ 
+        if user_selection.lower() == 'exit':
+            print("Thank you for checking our vegetables!")
+
+            return None, 0
+ 
+        # Confirm availability of selected item
+        if user_selection in VEGETABLES:
+            chosen_vegetable = VEGETABLES[user_selection]
+            print(f"You have selected {chosen_vegetable['name']}.")
+            total_due = chosen_vegetable['price']
+ 
+            # Prompt user payment
+            while total_due > 0:
+                try:
+                    user_payment = float(input(f"Please insert ${total_due:.2f} or pay with card: "))
+                    if user_payment >= total_due:
+                        change_returned = user_payment - total_due
+                        print(f"Thank you for your purchase! Your change is ${change_returned:.2f}.")                       
+
+                        return chosen_vegetable, total_due
+                    else:
+                        print("Insufficient payment. Please insert more money.")
+                        total_due -= user_payment
+                except ValueError:
+                    print("Invalid payment amount. Please enter a correct amount.")
+            break
+        else:
+            print("Invalid selection. Please try again.")
+ 
+    return None, 0
 
 
 def updateworksheet_sales(item: "vegetable", total_due: float):
@@ -94,6 +102,30 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
     print("Sales Worksheet successfully updated\n")
 
 
+def convert_and_sum(all_col_values_except_first):
+    """
+    Convert list string pulled from sales worksheet to 
+    float and integer and sum up the daily total
+    parameter:
+        - all_col_values_except_first: Amount column from worksheet
+                                       Excluding the header
+    """
+
+    for value in all_col_values_except_first:
+        
+        try:
+            float(value)
+        except ValueError:
+            raise ValueError(f"Invalid data '{value}': All data must be numeric or float strings.")
+ 
+    float_values = [float(value) for value in all_col_values_except_first]
+ 
+    total_sum = sum(float_values)
+    print(f"Total daily Sales: {total_sum}")
+ 
+    return total_sum
+
+
 def calculate_daily_sales():
     """
     Back office to calculate daily sales at the end of each market day.
@@ -101,12 +133,9 @@ def calculate_daily_sales():
     """
     worksheet = SPREADSHEET.worksheet("sales")
     colvalues = worksheet.col_values(2)  
-    all_col_values_except_first = colvalues[1:]  
- 
-    print(all_col_values_except_first)  
+    all_col_values_except_first = colvalues[1:]   
  
     return all_col_values_except_first
-
 
 
 def main():
@@ -115,6 +144,7 @@ def main():
     """
     vegetable, total_due = execute_vegetable_sales()
     updateworksheet_sales(vegetable, total_due)
-    calculate_daily_sales()
+    total_sum = calculate_daily_sales()
+    convert_and_sum(total_sum)
 
 main()
