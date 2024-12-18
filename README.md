@@ -10,23 +10,31 @@ Famer can also use the system to understand total daily sales at the end of each
 
   ![deployed app](./assets/readme-images/deployed%20app.jpg)
 #### User Demographic
-Vegetable farm data automation can be used by small to medium size vegetable farmers 
+Vegetable farm produce sales system can be used by small to medium size vegetable farmers 
 #### How to Use
-Vegetable farm data automation is based on gathering statistical data used to improve farmers harvest forecast for longer vegetable shelf life.
+Vegetable farm produce sales system is used for easy self-serve vegetable purchase. It can also be used by back office (famer) to understand daily sales, hence facilitate daily farmers vegetable availability planning.
 
 Step 1. Run the program (python3 run.py)
 
-Step 2. Enter trade data, collection of 13 numeric integers separated with commas
+Step 2. From the dispplayed items, enter item number of your choice
 
 Step 3. Hit enter to run the program
 
-Step 4. Trade worksheet auto Update
+Step 4. Enter amount displayed for your selected item
 
-Step 5. Excess worksheet auto Update
+Step 5. Hit enter to run the program
 
-Step 6. Harvest worksheet auto Update
+Step 6. If amount entered is not sufficient, program will display remaining amount and request user input
 
-Step 7. Print harvest forecast on terminal for next day
+Step 7. If amount entered is greater than produce price program will return balance
+
+Step 8. Hit enter once correct amount is entered
+
+Step 9. Sales worksheet auto update with item and amount 
+
+**Back-Office**
+Step 10. Program total amount sold at end of each market day
+
 
 
 ## Design
@@ -37,29 +45,19 @@ Lucid Chart to demonstrate development flow
 ### Existing Features
 #### Error handling:
 
-      * Input must be numeric integers
+      * Input must be item number
 
-      * Input must be collection of 13 numeric integers separated with commas
+      * Input amount must be >= price of vegetable
+ 
+      * Sales worksheet values for total daily sum must be integers or float
 
-* Trade worksheet updated when valid record is entered
-
-* Excess calculated and worksheet updated
-
-* Harvest forecast calculated and worksheet updated
-
-* Next day harvest forecast printed to terminal
 
 ### Future Features
 
-* Forecast harvest numbers for a longer period and seasons, e.g. summer, 
-  Christmas etc using average trade, harvest and excess data for several weeks.
-
-* Convert vegetables to be weighed in tonnes  
+* Convert vegetables to be weighed in tonnes for large vegetable farmers 
 
 ## Data Model
-Google sheet containing three worksheets (trade, excess and harvest)  was used with thirteen columns. The trade and excess worksheet contains nine rows of data while the harvest worksheet contains ten rows of data.
-Excess worksheet represents the subtraction of trade data from harvest data which is achieved by using the function calculate_excess_data parsing trade_row. 
-Harvest forecast is the average  trade for last week (7 days) and a markup of 20%.
+Google sheet containing one sales worksheet  was used were vegetables names are updated with corresponding purchased value and sum of total amount sold for back office use.
 
 
 ## Validation Testing
