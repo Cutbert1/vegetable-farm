@@ -48,7 +48,6 @@ def execute_vegetable_sales():
         if user_selection.lower() == 'exit':
             print("Thank you for checking our produce!")
             break
-            #return None, 0, False
  
         # Confirm availability of selected item
         if user_selection in VEGETABLES_BOX:
@@ -79,7 +78,7 @@ def execute_vegetable_sales():
  
 def updateworksheet_sales(item: "vegetable", total_due: float):
     """
-    Update worksheet for each purchase for back office inventory
+    Update sales worksheet for each purchase for back office inventory
     Parameters:
         - item: str
             The name of the item purchased.

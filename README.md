@@ -2,7 +2,9 @@
 # Vegetable Farm
 ## Introduction
 #### Project Description
-  Vegetable Farm is a statistical collection project to enable vegetable farmers collect details of daily sales of thirteen different vegetables types being cultivated on a farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, parsnip and onion). To understand and forecast daily vegetable harvest with reference to daily trade and excess. Excess references amount of each vegetable type sold out with more required to be harvested or more vegetable harvested than what was sold hence wasted as vegetables are highly perishable produce. This will enable the farmer provide fresh vegetable to customers and improved vegetable shelf life. 
+ Project is a vegetable sales system to enable farmers sell vegetable produce. Currently there are thirteen different vegetables types being cultivated on this farm (cabbage, carrot, mushroom, broccoli, cauliflower, avocado, asparagus, aubergine, tomato, cucumber, spinach, parsnip and onion), hence ready for sell in boxes. Users are expected to use this system to purchase any vegetables of their choice available for sale. 
+Famer can also use the system to understand total daily sales at the end of each market day.
+
 
   [Live version of my project, Vegetable Farm is here](https://vegetable-farm-d2f6bd1576d7.herokuapp.com/)
 
