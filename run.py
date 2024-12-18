@@ -13,34 +13,34 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SPREADSHEET = GSPREAD_CLIENT.open("vegetable_farm_sales")
  
-VEGETABLES = {
-    "1": {"name": "Cabbage", "price": 1.25},
-    "2": {"name": "Carrot", "price": 1.50},
-    "3": {"name": "Mushroom", "price": 2.00},
-    "4": {"name": "Broccoli", "price": 2.50},
-    "5": {"name": "Cauliflower", "price": 1.25},
-    "6": {"name": "Avocado", "price": 3.50},
-    "7": {"name": "Asparagus", "price": 2.00},
-    "8": {"name": "Aubergine", "price": 1.00},
-    "9": {"name": "Tomato", "price": 1.25},
-    "10": {"name": "Cucumber", "price": 1.50},
-    "11": {"name": "Spinach", "price": 2.00},
-    "12": {"name": "Parsnip", "price": 1.00},
-    "13": {"name": "Onion", "price": 1.00},
+VEGETABLES_BOX = {
+    "1": {"name": "Cabbage", "price": 37.50},
+    "2": {"name": "Carrot", "price": 25.50},
+    "3": {"name": "Mushroom", "price": 12.00},
+    "4": {"name": "Broccoli", "price": 8.50},
+    "5": {"name": "Cauliflower", "price": 15.99},
+    "6": {"name": "Avocado", "price": 32.50},
+    "7": {"name": "Asparagus", "price": 29.99},
+    "8": {"name": "Aubergine", "price": 45.70},
+    "9": {"name": "Tomato", "price": 37.99},
+    "10": {"name": "Cucumber", "price": 46.50},
+    "11": {"name": "Spinach", "price": 26.00},
+    "12": {"name": "Parsnip", "price": 33.00},
+    "13": {"name": "Onion", "price": 48.99},
 }
  
 def execute_vegetable_sales():
     """
     Execute vegetable sales
     """
-    # Display available items and prices
-    print("Welcome to the Vegetable Sales!")
+    # Display available produce and prices
+    print("Welcome to the Produce Sales!")
     print("Please select an item:")
  
-    for key, vegetable in VEGETABLES.items():
+    for key, vegetable in VEGETABLES_BOX.items():
         print(f"{key}. {vegetable['name']} - £{vegetable['price']}")
  
-    # Prompt user input
+    # Prompt user selection
     while True:
         user_selection = input("Enter the item number you wish to purchase (or type 'exit' to end): ")
  
@@ -49,8 +49,8 @@ def execute_vegetable_sales():
             return None, 0, False  
  
         # Confirm availability of selected item
-        if user_selection in VEGETABLES:
-            chosen_vegetable = VEGETABLES[user_selection]
+        if user_selection in VEGETABLES_BOX:
+            chosen_vegetable = VEGETABLES_BOX[user_selection]
             print(f"You have selected {chosen_vegetable['name']}.")
             total_due = chosen_vegetable['price']
  
