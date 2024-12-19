@@ -85,8 +85,10 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
 [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 ## Bugs
 #### Bugs Resolved
-* For get_last_week_trade function column count, initially used range(0, 12) to pull last 7 days trade data for 13 vegetable columns thinking that function works just lists zero index. However this was not pulling trade data for all 13 columns. 
-It was fixed by using range (1, 14)
+|Bug|   Description |Solution Applied|Result|
+|:------------|:----------------|:-------------|:------------|
+|Program thows error when user exit|After vegetable_box display ready for selection, user is advised to type “exit” if they do not want to proceed. Program throws us ValueError when user enters “exit" ![Valueerror](./assets/readme-images/valueerror.jpg)|On the while True, if statement for “exit” was returning None, 0 and False. ![Return](./assets/readme-images/return.jpg) Updated the code with break, hence end the program once user exit and commented out return values. ![Break](./assets/readme-images/break.jpg)|Bug resolved ![exit](./assets/readme-images/exit.jpg)|
+|Sales worksheet being updated with only additional amount|When insufficient fund is entered and program request user for additional money worksheet was being updated only  with additional amount entered ![Additional](./assets/readme-images/additional.jpg) ![Additionalws](./assets/readme-images/additionalws.jpg)|Add total_inserted variable on the conditional statements ![Insert](./assets/readme-images/insert.jpg)|Bug resolved ![Additional](./assets/readme-images/additional.jpg) ![Additionalwss](./assets/readme-images/additionalwss.jpg)|
 
 #### Bugs Unresolved
 There are no unresolved bug
@@ -132,8 +134,6 @@ There are no unresolved bug
   ![deploy branch](./assets/readme-images/deploy%20branch.jpg)
 
 ## Credits
-### Codes
-Code Institute [Love Sandwiches Tutorial](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/02-accessing-user-data/05-updating-our-sales-worksheet)
 ### Tutorials
 * Code Institute Python Essentials
 
