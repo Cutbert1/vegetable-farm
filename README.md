@@ -51,6 +51,8 @@ Lucid Chart to demonstrate development flow
  
       * Sales worksheet values for total daily sum must be integers or float
 
+      *Input must be integer or float
+
 
 ### Future Features
 
@@ -74,6 +76,7 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
 |Return balance when user input amount > price of vegetable displayed|Ensure amount balance is provided to the user when money inserted is > than the price of vegetable|Enter amount > than price of vegetable displayed|Amount balance returned to the user ![Balalnce](./assets/readme-images/balalnce.jpg)|
 |Update sales worksheet with name of vegetable purchased and amount|Automatically update sales worksheet |Enter valid vegetable number and sufficient amount for the price of item selected|Sales worksheet progression task printed to terminal and worksheet updated ![sales](./assets/readme-images/sales.jpg) ![salesws](./assets/readme-images/salesws.jpg)|
 |Total daily sales calculated and print to terminal for back office use|Automatically calculate total purchase value in real time and print to terminal |Enter valid vegetable number and sufficient amount for the price of item selected|Calculate total purchase value in real time and print to terminal ![total](./assets/readme-images/total.jpg)|
+|Input must be integer or float|Ensure data entered must be integer or float when program payment |Enter non-integer or float when program request payment |Invalid payment error message ![Invalid-payment](./assets/readme-images/invalidpayment.jpg)|
 
 ## Technologies Used
 

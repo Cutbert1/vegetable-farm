@@ -44,7 +44,9 @@ def execute_vegetable_sales():
 
     # Prompt user selection
     while True:
-        user_selection = input("Enter the item number you wish to purchase(or type 'exit' to end):")
+        user_selection = input(
+            "Enter item number you wish to purchase(or type 'exit' to end):"
+            )
 
         if user_selection.lower() == 'exit':
             print("Thank you for checking our produce!")
@@ -57,19 +59,24 @@ def execute_vegetable_sales():
             total_due = chosen_vegetable['price']
 
             # Prompt user payment
-            total_inserted = 0
-            while total_inserted < total_due:
+            total_insert = 0
+            while total_insert < total_due:
                 try:
-                    user_payment = float(input(f"Please insert £{total_due - total_inserted:.2f} or pay with card: "))
-                    total_inserted += user_payment
-                    if total_inserted >= total_due:
-                        change_returned = total_inserted - total_due
-                        print(f"Thank you for your purchase! Your change is £{change_returned:.2f}.\n")
-                        return chosen_vegetable, total_due, True, total_inserted
+                    user_payment = float(
+                        input(
+                            f"Please insert £{total_due - total_insert:.2f} or pay with card ")                        
+                    )
+                    total_insert += user_payment
+                    if total_insert >= total_due:
+                        change_returned = total_insert - total_due
+                        print(f"Thank you for your purchase!\n")
+                        print(f"Your change is £{change_returned:.2f}.\n")
+                        return chosen_vegetable, total_due, True, total_insert
                     else:
-                        print("Insufficient payment. Please insert more money.")
+                        print("Insufficient payment. Insert more money")
                 except ValueError:
-                    print("Invalid payment amount. Please enter a correct amount.")
+                    print("Invalid payment amount")
+                    print("Please enter a correct amount")
             break
         else:
             print("Invalid selection. Please try again.")
@@ -81,7 +88,7 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
     Update sales worksheet for each purchase for back office inventory
     Parameters:
         - item: str
-            The name of the item purchased.
+            The name of the vegetable purchased.
         - total_due: float or integer
             The value of the purchase.
 
@@ -98,7 +105,9 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
         worksheet.update_cell(next_row, 2, total_due)
 
     except Exception as e:
-        raise Exception(f"An error occurred while updating the sales worksheet: {e}")
+        raise Exception(
+            f"An error occurred while updating the sales worksheet: {e}"
+        )
     print("Sales Worksheet successfully updated\n")
 
 
@@ -117,7 +126,9 @@ def convert_and_sum(all_col_values_except_first):
         try:
             float(value)
         except ValueError:
-            raise ValueError(f"Invalid data '{value}': All data must be integer or float string.")
+            raise ValueError(
+                f"Invalid data '{value}': Data must be integer, float string."
+            )
 
     float_values = [float(value) for value in all_col_values_except_first]
 
@@ -143,8 +154,8 @@ def main():
     """
     Run program functions
     """
-    vegetable, total_due, should_record, total_inserted = execute_vegetable_sales()
-    if should_record:
+    vegetable, total_due, should_rec, total_insert = execute_vegetable_sales()
+    if should_rec:
         updateworksheet_sales(vegetable, total_due)
     total_sum = calculate_daily_sales()
     convert_and_sum(total_sum)
