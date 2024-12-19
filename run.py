@@ -37,7 +37,7 @@ def execute_vegetable_sales():
     """
     # Display available produce and prices
     print("Welcome to the Produce Sales!")
-    print("Please select an item:")
+    print("Please select a Produce:")
 
     for key, vegetable in VEGETABLES_BOX.items():
         print(f"{key}. {vegetable['name']} - £{vegetable['price']}")
@@ -143,7 +143,7 @@ def main():
     """
     Run program functions
     """
-    vegetable, total_due,should_record, total_inserted = execute_vegetable_sales()
+    vegetable, total_due, should_record, total_inserted = execute_vegetable_sales()
     if should_record:
         updateworksheet_sales(vegetable, total_due)
     total_sum = calculate_daily_sales()
