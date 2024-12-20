@@ -16,7 +16,7 @@ Vegetable farm produce sales system is used for easy self-serve vegetable purcha
 
 Step 1. Run the program (python3 run.py)
 
-Step 2. From the dispplayed items, enter item number of your choice
+Step 2. From the displayed items, enter item number of your choice
 
 Step 3. Hit enter to run the program
 
@@ -33,7 +33,7 @@ Step 8. Hit enter once correct amount is entered
 Step 9. Sales worksheet auto update with item and amount 
 
 **Back-Office**
-Step 10. Program total amount sold at end of each market day
+Step 10. Program total amount sold as produce are being purchased
 
 
 
@@ -59,11 +59,11 @@ Lucid Chart to demonstrate development flow
 * Convert vegetables to be weighed in tonnes for large vegetable farmers 
 
 ## Data Model
-Google sheet containing one sales worksheet  was used were vegetables names are updated with corresponding purchased value and sum of total amount sold for back office use.
+Google sheet containing one sales worksheet  was used were vegetables names are automatically updated with corresponding purchased value and sum of total amount sold as purchases are being made for back office use.
 
 
 ## Validation Testing
-Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error. However a line of code exceeds 79 characters PEP8 guideline but this was kept to improve readability on terminal rather than concatenating with backslash
+Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error. However a line of code exceeds 79 characters PEP8 guideline, but this was kept to improve code readability for when printed on terminal rather than concatenating with backslash.
 
 ![PEP8 manual test](./assets/readme-images/manual-test.jpg)
 
@@ -72,10 +72,10 @@ Manually tested this project by passing the code through a [PEP8 Python Linter](
 |Key Features|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
 |Input must be item number|Ensure user enter item number matching any of the displayed available vegetables|Enter vegetable_box item number that isn’t displayed |Invalid selection error message ![Ivalid-selection](./assets/readme-images/invalidselection.jpg)|
-|Input amount must be >= price of vegetable|Ensure amount entered must be greater than or equal to price of vegetable displayed|Enter amount not equal to a greater than price of vegetable displayed|Insufficient payment error message![Insufficient-payment](./assets/readme-images/insufficient.jpg)|
-|Return balance when user input amount > price of vegetable displayed|Ensure amount balance is provided to the user when money inserted is > than the price of vegetable|Enter amount > than price of vegetable displayed|Amount balance returned to the user ![Balalnce](./assets/readme-images/balalnce.jpg)|
+|Input amount must be >= price of vegetable|Ensure amount entered must be greater than or equal to price of vegetable displayed|Enter amount not equal to or greater than price of vegetable displayed|Insufficient payment error message![Insufficient-payment](./assets/readme-images/insufficient.jpg)|
+|Return balance when user input amount is > price of vegetable displayed|Ensure amount balance is provided to the user when money inserted is > than the price of vegetable|Enter amount > than price of vegetable displayed|Amount balance returned to the user ![Balalnce](./assets/readme-images/balalnce.jpg)|
 |Update sales worksheet with name of vegetable purchased and amount|Automatically update sales worksheet |Enter valid vegetable number and sufficient amount for the price of item selected|Sales worksheet progression task printed to terminal and worksheet updated ![sales](./assets/readme-images/sales.jpg) ![salesws](./assets/readme-images/salesws.jpg)|
-|Total daily sales calculated and print to terminal for back office use|Automatically calculate total purchase value in real time and print to terminal |Enter valid vegetable number and sufficient amount for the price of item selected|Calculate total purchase value in real time and print to terminal ![total](./assets/readme-images/total.jpg)|
+|Total sales calculated and print to terminal for back office use|Automatically calculate total purchase value in real time and print to terminal |Enter valid vegetable number and sufficient amount for the price of item selected|Calculate total purchase value in real time and print to terminal ![total](./assets/readme-images/total.jpg)|
 |Input must be integer or float|Ensure data entered must be integer or float when program payment |Enter non-integer or float when program request payment |Invalid payment error message ![Invalid-payment](./assets/readme-images/invalidpayment.jpg)|
 
 ## Technologies Used
