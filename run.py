@@ -62,10 +62,8 @@ def execute_vegetable_sales():
             total_insert = 0
             while total_insert < total_due:
                 try:
-                    user_payment = float(
-                        input(
-                            f"Please insert £{total_due - total_insert:.2f} or pay with card ")                        
-                    )
+                    user_payment = float(input(f"Please insert\
+                         £{total_due - total_insert:.2f} or pay with card "))
                     total_insert += user_payment
                     if total_insert >= total_due:
                         change_returned = total_insert - total_due
