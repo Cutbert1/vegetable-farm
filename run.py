@@ -33,14 +33,18 @@ VEGETABLES_BOX = {
 
 def execute_vegetable_sales():
     """
-    Execute vegetable sales
+    Execute vegetable sales process.
+
+    Displays available produce and prices, prompts the user for
+    selection, and handles the payment process. It continues until the user
+    decides to exit.
     """
     # Display available produce and prices
     print("Welcome to the Produce Sales!")
     print("Please select a Produce:")
 
     for key, vegetable in VEGETABLES_BOX.items():
-        print(f"{key}. {vegetable['name']} - £{vegetable['price']}")
+        print(f"{key}. {vegetable["name"]} - £{vegetable["price"]}")
 
     # Prompt user selection
     while True:
@@ -48,22 +52,24 @@ def execute_vegetable_sales():
             "Enter item number you wish to purchase(or type 'exit' to end):"
             )
 
-        if user_selection.lower() == 'exit':
+        if user_selection.lower() == "exit":
             print("Thank you for checking our produce!")
             break
 
         # Confirm availability of selected item
         if user_selection in VEGETABLES_BOX:
             chosen_vegetable = VEGETABLES_BOX[user_selection]
-            print(f"You have selected {chosen_vegetable['name']}.")
-            total_due = chosen_vegetable['price']
+            print(f"You have selected {chosen_vegetable["name"]}.")
+            total_due = chosen_vegetable["price"]
 
             # Prompt user payment
             total_insert = 0
             while total_insert < total_due:
                 try:
-                    user_payment = float(input(f"Please insert\
-                         £{total_due - total_insert:.2f} or pay with card "))
+                    # This line of code exceeds 79 characters, PEP8 guideline
+                    # but this was kept to improve readability on terminal
+                    # rather than concatenating with backslash
+                    user_payment = float(input(f"Please insert £{total_due - total_insert:.2f} or pay with card: "))
                     total_insert += user_payment
                     if total_insert >= total_due:
                         change_returned = total_insert - total_due
@@ -83,12 +89,15 @@ def execute_vegetable_sales():
 
 def updateworksheet_sales(item: "vegetable", total_due: float):
     """
-    Update sales worksheet for each purchase for back office inventory
+    Update sales worksheet for each purchase for back office inventory.
+
+    Adds a new row to the sales worksheet with purchased
+    vegetable and the total amount of purchase.
+
     Parameters:
         - item: str
-            The name of the vegetable purchased.
-        - total_due: float or integer
-            The value of the purchase.
+            Information about the vegetable purchased.
+        - total_due(float): The value of the purchase.
 
         Raises:
         - Exception:
@@ -111,12 +120,15 @@ def updateworksheet_sales(item: "vegetable", total_due: float):
 
 def convert_and_sum(all_col_values_except_first):
     """
-    Back office to calculate total daily sales at the end of each market day.
+    Calculate total sales as purchases are being made,
+    useful for end of each market day.
+
     Convert list strings pulled from sales worksheet to
-    float and integer and sum up daily total
+    float and integer and sum up total sales
+
     parameter:
         - all_col_values_except_first: Amount column from worksheet
-                                       Excluding the header
+                                       excluding the header
     """
 
     for value in all_col_values_except_first:
@@ -131,15 +143,17 @@ def convert_and_sum(all_col_values_except_first):
     float_values = [float(value) for value in all_col_values_except_first]
 
     total_sum = sum(float_values)
-    print(f"Total daily Sales: £{total_sum}")
+    print(f"Total daily Sales: £{total_sum:.2f}")
 
     return total_sum
 
 
 def calculate_daily_sales():
     """
-    Back office to calculate daily sales at the end of each market day.
-    Pull list of strings from sales worksheet
+    Retrieve daily sales data from the sales worksheet.
+
+    Pulls the list of sales amounts from the sales worksheet,
+    excluding the header row.
     """
     worksheet = SPREADSHEET.worksheet("sales")
     colvalues = worksheet.col_values(2)
@@ -151,6 +165,9 @@ def calculate_daily_sales():
 def main():
     """
     Run program functions
+
+    Coordinates the execution of the vegetable sales process,
+    updates the sales worksheet, and calculates the daily sales total.
     """
     vegetable, total_due, should_rec, total_insert = execute_vegetable_sales()
     if should_rec:

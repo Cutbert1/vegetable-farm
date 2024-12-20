@@ -63,7 +63,7 @@ Google sheet containing one sales worksheet  was used were vegetables names are 
 
 
 ## Validation Testing
-Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error.
+Manually tested this project by passing the code through a [PEP8 Python Linter](https://pep8ci.herokuapp.com/) and confirmed there are no Warning or Error. However a line of code exceeds 79 characters PEP8 guideline but this was kept to improve readability on terminal rather than concatenating with backslash
 
 ![PEP8 manual test](./assets/readme-images/manual-test.jpg)
 
